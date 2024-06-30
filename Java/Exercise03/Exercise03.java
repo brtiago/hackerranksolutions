@@ -1,6 +1,5 @@
-package Exercise03;
+package Java.Exercise03;
 
-import java.lang.Math.*;
 import java.util.*;
 
 public class Exercise03 {

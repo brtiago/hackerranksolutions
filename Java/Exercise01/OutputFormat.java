@@ -1,4 +1,4 @@
-package Exercise01;
+package Java.Exercise01;
 
 public class OutputFormat {
 
