@@ -4,7 +4,7 @@ import java.util.*;
 
 enum Days { SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY; }
 
-class Exercise05 {
+class Result {
 
     /*
      * Complete the 'findDay' function below.
@@ -24,7 +24,7 @@ class Exercise05 {
 
 }
 
-public class Solution {
+public class Exercise05 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -37,7 +37,7 @@ public class Solution {
 
         int year = Integer.parseInt(firstMultipleInput[2]);
 
-        String res = Exercise05.findDay(month, day, year);
+        String res = Result.findDay(month, day, year);
 
         bufferedWriter.write(res);
         bufferedWriter.newLine();
