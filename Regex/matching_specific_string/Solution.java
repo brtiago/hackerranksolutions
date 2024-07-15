@@ -1,10 +1,9 @@
-package Regex.Exercise01;
-import java.io.*;
+package Regex.matching_specific_string;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Exercise01 {
+public class Solution {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

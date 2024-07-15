@@ -1,10 +1,10 @@
-package Regex.Exercise02;
+package Regex.matching_digits_non_digit_character;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Exercise02 {
+public class Solution {
 
     public static void main(String[] args) {
 
