@@ -34,3 +34,5 @@
 
 Links úteis:
 https://www.baeldung.com/java-difference-map-and-flatmap
+https://www.youtube.com/watch?v=CwvlS3ViGFQ
+https://www.youtube.com/watch?v=ZskH9Wlb2f0

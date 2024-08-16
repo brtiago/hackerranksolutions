@@ -1,6 +1,7 @@
 package Study.streams;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,17 +12,17 @@ public class UsandoSream {
 
         var funcionarios = new ArrayList<Funcionario>();
 
-        funcionarios.add(new Funcionario(1, "Jose da Silva", "1111-1111", 25, new String[] {"Python", "Java", "Angular", "PostgreSQL"}));
-        funcionarios.add(new Funcionario(2, "Maria Santos", "2222-2222", 30, new String[] {"HTML", "CSS", "Javascript", "MySql"}));
-        funcionarios.add(new Funcionario(3, "Ana Maria", "3333-3333", 22, new String[] {"C++"}));
-        funcionarios.add(new Funcionario(4, "Antonio Silveira", "4444-4444", 28, new String[] {"Delphi", "PHP", "MySql", "HTML"}));
-        funcionarios.add(new Funcionario(6, "Fabiana Maria Pereira", null, 52, new String[] {"HTML", "CSS", "Bootstrap", "TailwindCSS"}));
-        funcionarios.add(new Funcionario(6, "Fabiana Maria Pereira", null, 52, new String[] {"HTML", "CSS", "Bootstrap", "TailwindCSS"})); // Item repetido propositalmente
-        funcionarios.add(new Funcionario(7, "Paulo Ferreira Monteiro", "7777-7777", 15, new String[] {"Python", "Java", "Angular", "PostgreSQL"}));
-        funcionarios.add(new Funcionario(8, "James Oliver", "1111-22222", 74, new String[] {"Python", "Java", "Angular", "PostgreSQL"}));
-        funcionarios.add(new Funcionario(9, "Venceslau Brás Garcia", "2222-33247", 74, new String[] {"Delphi", "PHP", "MySql", "HTML"}));
-        funcionarios.add(new Funcionario(10, "Alberto Roberto", "4444-55555", 22, new String[] {"Python", "Java", "Angular", "PostgreSQL"}));
-        funcionarios.add(new Funcionario(11, "Zeleide Almeida", "5555-444", 34, new String[] {"Python", "Golang", "NextJS", "MongoDB"}));
+        funcionarios.add(new Funcionario(1, "Jose da Silva", "1111-1111", 25, Arrays.asList("Python", "Java", "Angular", "PostgreSQL")));
+        funcionarios.add(new Funcionario(2, "Maria Santos", "2222-2222", 30, Arrays.asList("HTML", "CSS", "Javascript", "MySql")));
+        funcionarios.add(new Funcionario(3, "Ana Maria", "3333-3333", 22, Arrays.asList("C++")));
+        funcionarios.add(new Funcionario(4, "Antonio Silveira", "4444-4444", 28, Arrays.asList("Delphi", "PHP", "MySql", "HTML")));
+        funcionarios.add(new Funcionario(6, "Fabiana Maria Pereira", null, 52, Arrays.asList("HTML", "CSS", "Bootstrap", "TailwindCSS")));
+        funcionarios.add(new Funcionario(6, "Fabiana Maria Pereira", null, 52, Arrays.asList("HTML", "CSS", "Bootstrap", "TailwindCSS"))); // Item repetido propositalmente
+        funcionarios.add(new Funcionario(7, "Paulo Ferreira Monteiro", "7777-7777", 15, Arrays.asList("Python", "Java", "Angular", "PostgreSQL")));
+        funcionarios.add(new Funcionario(8, "James Oliver", "1111-22222", 74, Arrays.asList("Python", "Java", "Angular", "PostgreSQL")));
+        funcionarios.add(new Funcionario(9, "Venceslau Brás Garcia", "2222-33247", 74, Arrays.asList("Delphi", "PHP", "MySql", "HTML")));
+        funcionarios.add(new Funcionario(10, "Alberto Roberto", "4444-55555", 22, Arrays.asList("Python", "Java", "Angular", "PostgreSQL")));
+        funcionarios.add(new Funcionario(11, "Zeleide Almeida", "5555-444", 34, Arrays.asList("Python", "Golang", "NextJS", "MongoDB")));
 
 
         /* forma antiga
@@ -91,9 +92,25 @@ public class UsandoSream {
         System.out.println("Soma das idades: " + somaDasIdades);
          */
 
+        /*
         var funcionarioSet = funcionarios.stream().collect(Collectors.toSet()); //não vai exibir os indices duplicados pois é um set
         funcionarioSet.forEach(System.out::println);
+        */
 
+        /*
+        // listas de cursos não repetidos
+        funcionarios.stream()
+                .map(f -> f.getSkills().toString())
+                .distinct()
+                .forEach(System.out::println);
+         */
+
+        List<List<String>> listaDeCursos = funcionarios.stream().map(f -> f.getSkills()).collect(Collectors.toList());
+        System.out.println("Lista de Cursos:\n" + listaDeCursos);
+        System.out.println();
+
+        List<String> listaDeCursos2 = funcionarios.stream().flatMap(f -> f.getSkills().stream()).distinct().collect(Collectors.toList());
+        System.out.println("Lista 2:\n" + listaDeCursos2);
 
     }
 }
