@@ -111,6 +111,7 @@ public class UsandoSream {
 
         List<String> listaDeCursos2 = funcionarios.stream().flatMap(f -> f.getSkills().stream()).distinct().collect(Collectors.toList());
         System.out.println("Lista 2:\n" + listaDeCursos2);
+        listaDeCursos2.stream().forEach(System.out::println);
 
     }
 }
